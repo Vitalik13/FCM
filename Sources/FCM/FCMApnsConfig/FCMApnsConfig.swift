@@ -21,9 +21,9 @@ final public class FCMApnsConfig<P>: Codable where P: FCMApnsPayloadProtocol {
 
 extension FCMApnsConfig where P == FCMApnsPayload {
     /// Use this if you need only aps object
-    public convenience init(headers: [String: String]? = nil, aps: FCMApnsApsObject? = nil) {
+    public convenience init(headers: [String: String]? = nil, aps: FCMApnsApsObject? = nil, parameters: String? = nil) {
         if let aps = aps {
-            self.init(headers: headers, payload: FCMApnsPayload(aps: aps))
+            self.init(headers: headers, payload: FCMApnsPayload(aps: aps, parameters: parameters))
         } else {
             self.init(headers: headers, payload: FCMApnsPayload())
         }

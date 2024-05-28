@@ -8,11 +8,11 @@ public struct FCMApnsPayload: FCMApnsPayloadProtocol, Equatable {
     
     /// The APS object, primary alert
     public var aps: FCMApnsApsObject
-    public var parameters: String
+    public var parameters: String?
 
     public init(
         aps: FCMApnsApsObject? = nil,
-        parameters: String
+        parameters: String? = nil
     ) {
         self.aps = aps ?? FCMApnsApsObject.default
         self.parameters = parameters
